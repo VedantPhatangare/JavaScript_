@@ -47,3 +47,20 @@ let myFunction = function() {
     console.log("I am a funnction call")
 }
 console.log(typeof myFunction);
+
+//Prmitive data types as assigned with a copy (stack)
+//so if 
+/*name = "ved"
+name2 = "Ved"
+name2 = "Vedant"
+then name still stays Ved
+*/
+//but for non primitive types, ssigned with a direct reference, so if
+/*obj1 = {
+    roll: 43
+}
+    obj2 = obj1
+    obj2.roll = 1
+ 
+then original object also changes bcz obj2 is also refernced by a same memory as of original obj 
+*/
