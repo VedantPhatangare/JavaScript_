@@ -1,0 +1,11 @@
+const number = 400000
+console.log(number)
+const balance =new Number(400.601) 
+console.log(balance)
+console.log(balance.valueOf())
+console.log(balance.toString())
+console.log(balance.toString().length)
+console.log(balance.toFixed(2))
+console.log(balance.toPrecision(3))
+console.log(balance.toPrecision(4))
+console.log(number.toLocaleString('en-IN'))
