@@ -1,5 +1,5 @@
 //const let var
-// global scope in node files is different than the global scope in the browser console
+// global scope in node files is different than the global scope in the browser console,
 
 
 //nested acope
