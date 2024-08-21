@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: #212121 ; color:white ">
+    <!-- innerHTML, innerText, textContent -->
+    <!-- getElementbyId, getElementbyClassName (return HTML Collections) : querySelector, querySelectorAll (returns nodeList,it has built in ForEach loop, but for extra array functionalities, it can be converted to array using Array.from())  -->
+    <!-- querySelector promote css like syntax like for id (#id), for class (.className), h1:first-child etc -->
+    <!-- learn Css Selectors -->
+
+</body>
+<script>
+    let div = document.createElement('div')
+    // div.innerHTML = "I am a Div"
+    let text = document.createTextNode("I am a Div")
+    div.append(text)
+    div.className = "parent"
+    div.id = "temprory"
+    div.style.backgroundColor = "orange"
+    div.style.border = "2px solid red"
+    div.style.padding = "15vh 20vw"
+    document.body.append(div)
+
+
+//   addNewElement
+    function addChild(text) {
+        let childOne = document.createElement('div')
+        childOne.style.backgroundColor = "#212121"
+        childOne.style.margin = "3px"
+        // childOne.innerHTML = text
+        // div.appendChild(childOne)
+        childOne.appendChild(document.createTextNode(text))
+        document.querySelector('.parent').appendChild(childOne)
+    }
+
+
+    //edit
+    function editChild(edit,childNo) {
+        let currentEle = document.querySelector(`.parent div:nth-child(${childNo})`)     
+        // currentEle.outerHTML = '<div>This is edited</div>'
+        // or
+        let newEle = document.createElement('div')
+        newEle.innerText = edit
+        currentEle.replaceWith(newEle)
+    }
+    
+    //remove
+    function removeChild(childNo) {
+        document.querySelector(`.parent div:nth-child(${childNo})`).remove()
+    }
+    addChild("This is the first Child")
+    addChild("This is the second Child")
+    addChild("This is the Third Child")
+    addChild("This is the Fourth Child")
+    editChild("but now i got edited",2)
+    removeChild(4)
+</script>
+
+</html>
