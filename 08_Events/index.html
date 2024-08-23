@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            height: 15vh;
+            width: 15vw;
+            border: 2px solid black;
+            margin: 5px;
+        }
+
+        .boxes {
+            border: 1px solid black;
+            display: inline-flex;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .pink {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="boxes">
+        <div class="box blue"></div>
+        <div class="box red"></div>
+        <div class="box pink"></div>
+        <div class="box yellow"></div>
+        <div class="box green"></div>
+    </div>
+    <script>
+        document.querySelector('.boxes').addEventListener('click', (e) => {
+            // e.target.tagName
+            if (e.target.className !== 'boxes') {
+                e.target.remove()
+            }
+            console.log(e.currentTarget)
+            console.log('i am parent event')
+        }, true)
+        document.querySelector('.blue').addEventListener('click', (e) => {
+            e.stopPropagation()
+            console.log('i am blue box event')
+        })
+    </script>
+    <!-- third argument in addEventListener is event bubling or event capturing -->
+    <!-- where bubling is from child element to parent element and event capturing is from top to bottom i.e from parent element to the child element -->
+    <!-- stopPropogation(): this method is used to stop the event propogation chain from current element, but if in parent element event listner , if event capturing ("true") is allowed then first event of parent element will happen and then event of child element will take place -->
+
+
+
+    <!-- imp event object properties: -->
+    <!-- type,timestamp, preventDefault, -->
+    <!-- target, toElement, srcElement, currentTarget, -->
+    <!-- clientX, clientY, screenX, screenY , alt  -->
+</body>
+
+</html>
