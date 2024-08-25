@@ -52,7 +52,7 @@ now we can simply access instructor property of course object using "instr" keyw
 
 
 
-//data via Array look like 
+//data via Array looks like 
 /*[
     {},
     {},

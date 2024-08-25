@@ -1,0 +1,30 @@
+<!-- // js in single threaded and synchronous by default
+// blocking Code;synchronous code
+// Non- blocking Code;a synchronous code -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Async</h1>
+    <button id="start">start</button>
+    <button id="stop">Stop</button>
+    <script>
+        function printData(str) {
+            console.log(str,Date.now())
+        }
+        const start = document.querySelector('#start')
+        const Stop = document.querySelector('#stop')
+        let eventFunc;
+        start.addEventListener('click',()=>{
+            eventFunc = setInterval(printData,1000,"third argument")
+        })
+        Stop.addEventListener('click',()=>{
+            clearInterval(eventFunc)
+        })
+    </script>
+</body>
+</html>

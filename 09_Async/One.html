@@ -1,0 +1,35 @@
+<!-- // js in single threaded and synchronous by default
+// blocking Code;synchronous code
+// Non- blocking Code;a synchronous code -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Async</h1>
+    <button id="stop">Stop</button>
+    <script>
+        // setTimeout(() => {
+        //     console.log("Hi") 
+        // }, 2000);
+
+        // function changeText() {
+        //     document.querySelector('h1').innerHTML = 'SetTimeout Ni kely he'
+        // }
+        function changeText(str) {
+            document.querySelector('h1').innerHTML = str
+        }
+        // const changeMe = setTimeout(changeText, 2000);
+        const changeMe = setTimeout(changeText, 2000,'SetTimeout Ni kely he');
+        // clearTimeout(changeMe)
+
+        document.querySelector('#stop').addEventListener('click',()=>{
+            clearTimeout(changeMe)
+            console.log("STOPPED")
+        })
+    </script>
+</body>
+</html>

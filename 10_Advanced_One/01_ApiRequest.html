@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    0 (UNSET):Client has been created. open()not called yet
+    1 (OPENED):open() has been called
+    2 (HEADERS RECEIVED): send() has been called, and headers and status are available
+    3 (LOADING downloading): responseText holds partial data
+    4 (DONE): Operation is complete
+    <div class="create" style="height: 30px; width: 45px ;background-color: #212121; color: white; border: 1px solid black;">Click</div>
+
+</body>
+<script>
+
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+    let button = document.querySelector('.create')
+
+    function createCard() {
+        let card = document.createElement('div')
+        card.setAttribute('class', 'card')
+        card.style.height = '200px'
+        card.style.width = '180px'
+        card.style.border = '1px solid black'
+
+        let xhr = new XMLHttpRequest()
+        xhr.open('GET', requestUrl)
+        xhr.onreadystatechange = function () {
+            // console.log(xhr.readyState)
+            if (xhr.readyState == 4) {
+                let data = this.responseText
+                let parsedData = JSON.parse(data)
+                console.log(parsedData)
+                let followers = parsedData.followers
+                let photo = parsedData.avatar_url
+                card.innerHTML =
+                    `
+                    <div class= 'img'>
+                     <img src="${photo}" alt="" height= "180px">
+                    </div>
+                    <div class= 'followers'>
+                    <h3>${followers}</h3>
+                    </div>
+                    `
+                document.body.appendChild(card)
+            }
+        }
+        xhr.send() //open called
+
+
+    }
+
+
+    button.addEventListener('click', createCard)
+
+</script>
+
+</html>
