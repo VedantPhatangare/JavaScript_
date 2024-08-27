@@ -123,3 +123,7 @@ getData()
 
 // })
 // .catch((err)=> console.log(err))
+
+
+
+// there is a special queue called "micro task queue" or "priority queue" which has more priority than normal callback task queue fir other aync operations
