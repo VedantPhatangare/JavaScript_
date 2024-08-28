@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>I am Button</button>
+
+</body>
+<script>
+    class React{
+        constructor(){
+            this.server = "http:localhost:3000"
+
+            document
+             .querySelector('button')
+             .addEventListener('click',this.handleclick.bind(this))
+            //  we cannot use call here, bcz call gives new reference , but here it has its own "this" refernce which is button, so that it would run on clicked when button only, ont anywhere, so original "this" of handleclick which is button refernce is imp to execute when button clicked, so we dont want to replace its whole "this" , but just want to bind our this also, so that onclick event it should access  
+        }
+        handleclick(){
+            console.log("Button Clicked");
+            // console.log(this);
+            console.log(this.server);
+        }
+
+    }
+
+    
+    let demo = new React
+
+
+</script>
+</html>
