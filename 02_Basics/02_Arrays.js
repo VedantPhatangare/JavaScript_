@@ -10,9 +10,10 @@ let arr2 = [3,4,5]
 
 
 // // Array.flat
-// let complexArr = [6,7,[1,2,3],8, [9,[10,11]]]
-// let flattendArr = complexArr.flat(2) //infinity as depth also can be given
-// console.log(flattendArr)
+let complexArr = [6,7,[1,2,3],8, [9,[10,11]]]
+let flattendArr = complexArr.flat(2)
+ //infinity as depth also can be given
+console.log(flattendArr)
 
 //Array.isArray
 // console.log(Array.isArray("Ved"))

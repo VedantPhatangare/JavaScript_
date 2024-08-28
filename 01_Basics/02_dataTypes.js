@@ -32,8 +32,8 @@ let boolNumber = Boolean(boolvalue)
 //but === checks the types and value both so "2" === 2 is false
 
 
-//reference (NOn primitive data types)
-//Array Object  Functions
+//reference (Non primitive data types)
+//Array Object Functions
 let nameList = ["vedant", "siddhant"]
 console.log(typeof nameList);
 

@@ -31,6 +31,7 @@ const userInfo = {
 
 
 // *************This in Functions*************
+
 /*function One() {
     const username = "ved"
     console.log(this) //return a non-empty object in normal function
