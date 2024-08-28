@@ -1,7 +1,7 @@
 // flasy values
 // false,0,-0,BigInt 0n, "",null,undefined,NaN
 // truthy values
-// function(){}, {}(object), [], " ", 'false',"0"
+// function(){}, {}, [], " ", 'false',"0"
 
 
 // if array is empty
