@@ -65,6 +65,11 @@ console.log(youtubeUser)
 console.log(Object.keys(youtubeUser))
 console.log(Object.values(youtubeUser))
 console.log(Object.entries(youtubeUser))
+let entries = Object.entries(youtubeUser)
+
+for (const [key,value] of entries) {
+    console.log(`${key}:${value}`)
+}
 
 //How to check the key is available inside any object or not
 

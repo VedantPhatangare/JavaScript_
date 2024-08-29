@@ -18,7 +18,7 @@ let numbers = [1,2,3,4,5]
 // Reduce
 // ssample usecase: if we want to get sum of all items prices
 
-// console.log(numbers.reduce((acc,nums)=>(nums+acc), 0))
+console.log(numbers.reduce((acc,nums)=>(nums+acc), 0))
 
 
 

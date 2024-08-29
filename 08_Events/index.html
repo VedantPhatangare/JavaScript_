@@ -56,7 +56,7 @@
             }
             console.log(e.currentTarget)
             console.log('i am parent event')
-        }, true)
+        })
         document.querySelector('.blue').addEventListener('click', (e) => {
             e.stopPropagation()
             console.log('i am blue box event')
